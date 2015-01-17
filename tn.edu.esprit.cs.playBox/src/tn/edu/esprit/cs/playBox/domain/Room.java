@@ -4,6 +4,7 @@ public class Room {
 	public  Room ()
 	{
 		System.out.println("hello world");
+		
 	}
 	
 
