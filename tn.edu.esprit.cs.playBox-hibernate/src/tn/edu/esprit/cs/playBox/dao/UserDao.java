@@ -28,12 +28,40 @@ public class UserDao {
 		try {
 			session.getTransaction().begin();
 			userFound = (User) session.get(User.class, id);
-			session.getTransaction().commit();
+			// session.getTransaction().commit();
 		} catch (Exception e) {
-			System.err.println("add problem ...");
+			System.err.println("find problem ...");
 			session.getTransaction().rollback();
 		}
 		return userFound;
+	}
+
+	public Boolean deletUser(User user) {
+		Boolean b = false;
+		try {
+			session.getTransaction().begin();
+			session.delete(user);
+			session.getTransaction().commit();
+			b = true;
+		} catch (Exception e) {
+			System.err.println("deleting  problem ...");
+			session.getTransaction().rollback();
+		}
+		return b;
+	}
+
+	public Boolean updateUser(User user) {
+		Boolean b = false;
+		try {
+			session.getTransaction().begin();
+			session.update(user);
+			session.getTransaction().commit();
+			b = true;
+		} catch (Exception e) {
+			System.err.println("updating  problem ...");
+			session.getTransaction().rollback();
+		}
+		return b;
 	}
 
 }
