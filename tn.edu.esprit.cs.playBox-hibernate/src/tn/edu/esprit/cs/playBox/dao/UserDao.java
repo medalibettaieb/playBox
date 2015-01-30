@@ -23,4 +23,17 @@ public class UserDao {
 		return b;
 	}
 
+	public User findUserById(Integer id) {
+		User userFound = null;
+		try {
+			session.getTransaction().begin();
+			userFound = (User) session.get(User.class, id);
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			System.err.println("add problem ...");
+			session.getTransaction().rollback();
+		}
+		return userFound;
+	}
+
 }
