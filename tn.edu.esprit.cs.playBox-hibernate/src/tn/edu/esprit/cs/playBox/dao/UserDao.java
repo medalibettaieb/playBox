@@ -1,5 +1,9 @@
 package tn.edu.esprit.cs.playBox.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 
 import tn.edu.esprit.cs.playBox.domain.User;
@@ -62,6 +66,21 @@ public class UserDao {
 			session.getTransaction().rollback();
 		}
 		return b;
+	}
+
+	public List<User> findAllUsers() {
+		List<User> users = new ArrayList<>();
+		String hql = "from User";
+		try {
+			session.getTransaction().begin();
+			Query query = session.createQuery(hql);
+			users = query.list();
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+		}
+
+		return users;
 	}
 
 }
