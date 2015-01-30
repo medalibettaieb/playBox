@@ -28,7 +28,6 @@ public class MyConnectionMysql {
 			statement = giveMeConnection().createStatement();
 			System.out.println("statement configured ...");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return statement;
