@@ -16,7 +16,6 @@ public class User implements Serializable {
 	private String name;
 
 	public User() {
-		// TODO Auto-generated constructor stub
 	}
 
 	@Id

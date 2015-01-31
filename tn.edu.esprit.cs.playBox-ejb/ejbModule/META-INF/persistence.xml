@@ -5,6 +5,7 @@
 	<persistence-unit name="tn.edu.esprit.cs.playBox-ejb">
 		<jta-data-source>java:/playBoxDS</jta-data-source>
 		<class>domain.User</class>
+		<class>domain.Game</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
