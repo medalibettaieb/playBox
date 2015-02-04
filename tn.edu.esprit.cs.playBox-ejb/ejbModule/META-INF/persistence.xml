@@ -6,6 +6,18 @@
 		<jta-data-source>java:/playBoxDS</jta-data-source>
 		<class>domain.User</class>
 		<class>domain.Game</class>
+		<class>training.oneToOneBi.A</class>
+		<class>training.oneToOneBi.B</class>
+		<class>training.oneToOneUni.C</class>
+		<class>training.oneToOneUni.D</class>
+		<class>training.oneToManyBi.E</class>
+		<class>training.oneToManyBi.F</class>
+		<class>training.oneToManyUniMasterSlave.G</class>
+		<class>training.oneToManyUniMasterSlave.H</class>
+		<class>training.oneToManyUniSlaveMaster.I</class>
+		<class>training.oneToManyUniSlaveMaster.J</class>
+		<class>training.manyToManyBi.K</class>
+		<class>training.manyToManyBi.L</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
