@@ -12,6 +12,7 @@ import javax.persistence.InheritanceType;
  * 
  */
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class Vehicle implements Serializable {
 
 	private Integer id;
