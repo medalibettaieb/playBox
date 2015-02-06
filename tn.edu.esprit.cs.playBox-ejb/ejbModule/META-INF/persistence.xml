@@ -21,6 +21,10 @@
 		<class>training.inheritance.Vehicle</class>
 		<class>training.inheritance.Car</class>
 		<class>training.inheritance.MotoBike</class>
+		<class>domain.Player</class>
+		<class>domain.Admin</class>
+		<class>domain.Subscription</class>
+		<class>domain.Room</class>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
