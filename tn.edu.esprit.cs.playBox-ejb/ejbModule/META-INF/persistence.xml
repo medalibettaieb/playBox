@@ -29,6 +29,7 @@
 		<class>training.oneToOneBi.B</class>
 		<class>training.oneToOneUni.C</class>
 		<class>training.oneToOneUni.D</class>
+		
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
