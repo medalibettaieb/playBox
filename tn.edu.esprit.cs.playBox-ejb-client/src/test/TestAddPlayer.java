@@ -20,7 +20,7 @@ public class TestAddPlayer {
 		player.setPassword("password");
 		player.setCash(500F);
 
-		System.out.println(proxy.addPlayer(player));
+		System.out.println(proxy.addUser(player));
 	}
 
 }

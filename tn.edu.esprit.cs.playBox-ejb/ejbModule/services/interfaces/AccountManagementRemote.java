@@ -1,11 +1,21 @@
 package services.interfaces;
 
+import java.util.List;
+
 import javax.ejb.Remote;
 
-import domain.Player;
+import domain.User;
 
 @Remote
 public interface AccountManagementRemote {
-	Boolean addPlayer(Player player);
+	Boolean addUser(User user);
+
+	User findUserById(Integer id);
+
+	Boolean deleteUser(Integer id);
+
+	Boolean updateUser(User user);
+
+	List<User> findAllUsers();
 
 }
