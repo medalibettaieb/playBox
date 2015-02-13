@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import services.interfaces.AccountManagementLocal;
 import services.interfaces.AccountManagementRemote;
@@ -63,10 +64,17 @@ public class AccountManagement implements AccountManagementRemote,
 		return b;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> findAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
+		List<User> users = null;
+		try {
+			String jpql = "select u from User u";
+			Query query = entityManager.createQuery(jpql);
+			users = query.getResultList();
+		} catch (Exception e) {
+		}
+		return users;
 	}
 
 }
