@@ -38,20 +38,29 @@ public class AccountManagement implements AccountManagementRemote,
 
 	@Override
 	public User findUserById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return entityManager.find(User.class, id);
 	}
 
 	@Override
 	public Boolean deleteUser(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		Boolean b = false;
+		try {
+			entityManager.remove(findUserById(id));
+			b = true;
+		} catch (Exception e) {
+		}
+		return b;
 	}
 
 	@Override
 	public Boolean updateUser(User user) {
-		// TODO Auto-generated method stub
-		return null;
+		Boolean b = false;
+		try {
+			entityManager.merge(user);
+			b = true;
+		} catch (Exception e) {
+		}
+		return b;
 	}
 
 	@Override
