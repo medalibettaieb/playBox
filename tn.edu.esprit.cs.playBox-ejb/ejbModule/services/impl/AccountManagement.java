@@ -91,4 +91,9 @@ public class AccountManagement implements AccountManagementRemote,
 		return user;
 	}
 
+	@Override
+	public User loginBis(User user) {
+		return entityManager.find(User.class, user);
+	}
+
 }
