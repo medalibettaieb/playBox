@@ -77,4 +77,18 @@ public class AccountManagement implements AccountManagementRemote,
 		return users;
 	}
 
+	@Override
+	public User login(String login, String password) {
+		User user = null;
+		try {
+			String jpql = "select u from User u where u.login = :l and u.password = :p ";
+			Query query = entityManager.createQuery(jpql);
+			query.setParameter("l", login);
+			query.setParameter("p", password);
+			user = (User) query.getSingleResult();
+		} catch (Exception e) {
+		}
+		return user;
+	}
+
 }

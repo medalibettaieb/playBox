@@ -18,4 +18,6 @@ public interface AccountManagementRemote {
 
 	List<User> findAllUsers();
 
+	User login(String login, String password);
+
 }
