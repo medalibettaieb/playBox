@@ -25,6 +25,8 @@
 		<class>training.oneToOneUni.D</class>
 		<class>domain.Citizen</class>
 		<class>domain.IdCard</class>
+		<class>domain.Father</class>
+		<class>domain.Son</class>
 		
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
