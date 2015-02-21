@@ -25,6 +25,15 @@ public class User implements Serializable {
 
 	public User() {
 	}
+	
+
+	public User(String name, String login, String password) {
+		super();
+		this.name = name;
+		this.login = login;
+		this.password = password;
+	}
+
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

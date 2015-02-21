@@ -18,6 +18,11 @@ public class Player extends User implements Serializable {
 		super();
 	}
 
+	public Player(String name, String login, String password, Float cash) {
+		super(name, login, password);
+		this.cash = cash;
+	}
+
 	public Float getCash() {
 		return this.cash;
 	}

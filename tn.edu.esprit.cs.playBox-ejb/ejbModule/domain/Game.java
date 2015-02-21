@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -26,7 +28,13 @@ public class Game implements Serializable {
 		super();
 	}
 
+	public Game(String name) {
+		super();
+		this.name = name;
+	}
+
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getId() {
 		return this.id;
 	}
@@ -59,6 +67,12 @@ public class Game implements Serializable {
 
 	public void setRooms(List<Room> rooms) {
 		this.rooms = rooms;
+	}
+
+	@Override
+	public String toString() {
+		return "Game [id=" + id + ", name=" + name + ", subscriptions="
+				+ subscriptions + ", rooms=" + rooms + "]";
 	}
 
 }

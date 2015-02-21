@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -28,7 +30,15 @@ public class Room implements Serializable {
 		super();
 	}
 
+	public Room(String name, Integer nbMaxPerson, String type) {
+		super();
+		this.name = name;
+		this.nbMaxPerson = nbMaxPerson;
+		this.type = type;
+	}
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return this.id;
 	}
