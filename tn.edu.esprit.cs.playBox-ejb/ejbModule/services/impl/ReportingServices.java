@@ -6,7 +6,7 @@ import javax.persistence.PersistenceContext;
 
 import services.interfaces.ReportingServicesLocal;
 import services.interfaces.ReportingServicesRemote;
-import domain.Subscription;
+import domain.Play;
 
 /**
  * Session Bean implementation class ReportingServices
@@ -25,13 +25,11 @@ public class ReportingServices implements ReportingServicesRemote,
 	}
 
 	@Override
-	public Boolean attributeScoreToPlayer(Integer idSubscription, Integer score) {
+	public Boolean gameOver(Play play, Integer score) {
 		Boolean b = false;
 		try {
-			Subscription subscriptionSelected = entityManager.find(
-					Subscription.class, idSubscription);
-			subscriptionSelected.setScore(score);
-			entityManager.merge(subscriptionSelected);
+			play.setScore(score);
+			entityManager.merge(play);
 			b = true;
 		} catch (Exception e) {
 		}

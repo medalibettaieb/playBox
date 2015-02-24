@@ -2,8 +2,10 @@ package services.interfaces;
 
 import javax.ejb.Remote;
 
+import domain.Play;
+
 @Remote
 public interface ReportingServicesRemote {
-	Boolean attributeScoreToPlayer(Integer idSubscription, Integer score);
+	Boolean gameOver(Play play, Integer score);
 
 }

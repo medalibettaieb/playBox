@@ -10,6 +10,7 @@ import javax.persistence.Query;
 import services.interfaces.AssignmentManagementLocal;
 import services.interfaces.AssignmentManagementRemote;
 import domain.Game;
+import domain.Play;
 import domain.Player;
 import domain.Room;
 import domain.Subscription;
@@ -78,18 +79,17 @@ public class AssignmentManagement implements AssignmentManagementRemote,
 	}
 
 	@Override
-	public Boolean chooseGame(Integer idGame, Integer idSubscription) {
+	public Boolean playGame(Subscription subscription, Game game) {
 		Boolean b = false;
 		try {
-			Game gameSelected = entityManager.find(Game.class, idGame);
-			Subscription subscription = entityManager.find(Subscription.class,
-					idSubscription);
-			subscription.setGame(gameSelected);
-			entityManager.merge(subscription);
+			Play play = new Play(subscription, game);
+			entityManager.persist(play);
 			b = true;
 		} catch (Exception e) {
 		}
 		return b;
 	}
+
+	
 
 }

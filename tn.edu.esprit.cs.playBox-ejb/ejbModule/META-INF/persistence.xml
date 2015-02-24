@@ -6,6 +6,8 @@
 		<jta-data-source>java:/playBoxDS</jta-data-source>
 		<class>domain.Admin</class>
 		<class>domain.Game</class>
+		<class>domain.Play</class>
+		<class>domain.PlayId</class>
 		<class>domain.Player</class>
 		<class>domain.Room</class>
 		<class>domain.Subscription</class>

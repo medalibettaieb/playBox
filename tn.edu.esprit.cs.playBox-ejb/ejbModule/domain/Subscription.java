@@ -2,12 +2,14 @@ package domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Subscription
@@ -18,12 +20,11 @@ public class Subscription implements Serializable {
 
 	private Integer id;
 	private Date dateOfSubscription;
-	private Integer score;
 	private static final long serialVersionUID = 1L;
 
 	private User user;
 	private Room room;
-	private Game game;
+	private List<Play> plays;
 
 	public Subscription() {
 		super();
@@ -54,13 +55,7 @@ public class Subscription implements Serializable {
 		this.dateOfSubscription = dateOfSubscription;
 	}
 
-	public Integer getScore() {
-		return this.score;
-	}
 
-	public void setScore(Integer score) {
-		this.score = score;
-	}
 
 	@ManyToOne
 	public User getUser() {
@@ -80,13 +75,13 @@ public class Subscription implements Serializable {
 		this.room = room;
 	}
 
-	@ManyToOne
-	public Game getGame() {
-		return game;
+	@OneToMany(mappedBy = "subscription")
+	public List<Play> getPlays() {
+		return plays;
 	}
 
-	public void setGame(Game game) {
-		this.game = game;
+	public void setPlays(List<Play> plays) {
+		this.plays = plays;
 	}
 
 }

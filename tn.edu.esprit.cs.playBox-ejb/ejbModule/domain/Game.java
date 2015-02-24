@@ -20,8 +20,8 @@ public class Game implements Serializable {
 	private Integer id;
 	private String name;
 	private static final long serialVersionUID = 1L;
+	private List<Play> plays;
 
-	private List<Subscription> subscriptions;
 	private List<Room> rooms;
 
 	public Game() {
@@ -34,7 +34,7 @@ public class Game implements Serializable {
 	}
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Integer getId() {
 		return this.id;
 	}
@@ -51,15 +51,6 @@ public class Game implements Serializable {
 		this.name = name;
 	}
 
-	@OneToMany(mappedBy = "game")
-	public List<Subscription> getSubscriptions() {
-		return subscriptions;
-	}
-
-	public void setSubscriptions(List<Subscription> subscriptions) {
-		this.subscriptions = subscriptions;
-	}
-
 	@ManyToMany
 	public List<Room> getRooms() {
 		return rooms;
@@ -69,10 +60,13 @@ public class Game implements Serializable {
 		this.rooms = rooms;
 	}
 
-	@Override
-	public String toString() {
-		return "Game [id=" + id + ", name=" + name + ", subscriptions="
-				+ subscriptions + ", rooms=" + rooms + "]";
+	@OneToMany(mappedBy = "game")
+	public List<Play> getPlays() {
+		return plays;
+	}
+
+	public void setPlays(List<Play> plays) {
+		this.plays = plays;
 	}
 
 }
