@@ -6,5 +6,6 @@
 	<classpathentry kind="lib" path="lib/jboss-client.jar"/>
 	<classpathentry kind="lib" path="lib/hibernate-core-4.0.1.Final.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/tn.edu.esprit.cs.playBox-ejb"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
