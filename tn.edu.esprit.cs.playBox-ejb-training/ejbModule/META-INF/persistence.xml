@@ -7,27 +7,8 @@
 		<class>training.inheritance.Car</class>
 		<class>training.inheritance.MotoBike</class>
 		<class>training.inheritance.Vehicle</class>
-		<class>training.manyToManyBi.K</class>
-		<class>training.manyToManyBi.L</class>
-		<class>training.manyToManyWithData.Employee</class>
-		<class>training.manyToManyWithData.Participation</class>
-		<class>training.manyToManyWithData.ParticipationId</class>
-		<class>training.manyToManyWithData.Project</class>
-		<class>training.oneToManyBi.E</class>
-		<class>training.oneToManyBi.F</class>
-		<class>training.oneToManyUniMasterSlave.G</class>
-		<class>training.oneToManyUniMasterSlave.H</class>
-		<class>training.oneToManyUniSlaveMaster.I</class>
-		<class>training.oneToManyUniSlaveMaster.J</class>
-		<class>training.oneToOneBi.A</class>
-		<class>training.oneToOneBi.B</class>
-		<class>training.oneToOneUni.C</class>
-		<class>training.oneToOneUni.D</class>
-		<class>domain.Citizen</class>
-		<class>domain.IdCard</class>
-		<class>domain.Father</class>
-		<class>domain.Son</class>
-		
+
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="create" />
 		</properties>
